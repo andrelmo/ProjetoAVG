@@ -1,0 +1,23 @@
+﻿<h6 class="titulo">Items para Aprovação</h6>
+<p *ngIf="!ListaTipoWorkItems">Carregando Lista de Items</p>
+
+<div class="table-responsive" style="overflow: auto">
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <thead class="thead-light">
+            <tr>
+                <td>Id</td>
+                <td>Work Item</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of ListaTipoWorkItems">
+                <td>{{f.Id}}</td>
+                <td>{{f.TextoWorkItem}}</td>
+                <td><button id="btnEditar" class="btn-primary btn" (click)="AprovarWorkItem(f.Id)">Aprovar</button></td>
+                <td><button id="btnExcluir" class="btn btn-danger" (click)="ReprovarWorkItem(f.Id)">Reprovar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
